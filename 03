@@ -1,0 +1,19 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.scores = []  # 점수를 담을 리스트를 class 내에서 정의해주기
+
+    def add_score(self, score):  #score 속성 추가
+        self.scores.append(score)  # 리스트에 점수 추가를 여기서!
+        print(f"{self.name}의 성적 {score}이 추가되었습니다.")
+
+    def cal_avg(self):
+        avg = sum(self.scores) / len(self.scores)
+        print(f"{self.name}의 평균성적: {avg:.1f}")
+
+st1 = Student("KIM")
+st1.add_score(90)
+st1.add_score(85)
+st1.add_score(78)
+
+st1.cal_avg()
